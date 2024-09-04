@@ -35,9 +35,10 @@ def search_product(search):
   return df.sort_values(by='Similarity', ascending=False).head(10)[['Title','Description','Category']]
 
 # web app
+st.set_page_config(page_title = "Amazon Search Engine")
 img = Image.open('img.jpeg')
 st.image(img,width = 600)
-st.title('Search Engine and Product Recommendation System on Amazone Data')
+st.title('Search Engine and Product Recommendation System on Amazon Data')
 search = st.text_input('Enter Product Name')
 sumbitbtn = st.button('Search')
 if sumbitbtn:
