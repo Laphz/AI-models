@@ -18,6 +18,7 @@ st.markdown("""
 lg = pkl.load(open('model.pkl','rb'))
 
 # web app 
+st.set_page_config(page_title = "Job Placement Predication Model")
 img = Image.open('img.jpeg')
 st.image(img,width = 600)
 st.title('Job Placement Predication Model')
