@@ -65,6 +65,7 @@ def extract_topn_from_vector(feature_names, sorted_items, topn=10):
     return results
 
 # Streamlit UI
+st.set_page_config(page_title = "Keyword Extraction App")
 st.title('Keyword Extraction and Search App')
 #img = Image.open('img.jpeg')
 st.image(img,width = 350)
