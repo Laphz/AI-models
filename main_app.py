@@ -14,6 +14,7 @@ models = {
 }
 
 # Sidebar navigation
+st.set_page_config(page_title = " =AI Models")
 st.title("AI Models")
 img = Image.open('main.jpeg')
 img = img.resize((700,400))
