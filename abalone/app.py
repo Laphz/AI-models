@@ -32,6 +32,7 @@ def predict_age(Sex, Length, Diameter, Height, Whole_weight, Shucked_weight, Vis
     return prediction[0]
 
 # Streamlit app
+st.set_page_config(page_title = "Abalone Age Prediction")
 st.title('Abalone Age Prediction')
 img = Image.open('img.jpeg')
 img = img.resize((650,250))
