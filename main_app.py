@@ -20,14 +20,29 @@ img = img.resize((700,400))
 st.image(img)
 selected_model = st.selectbox("Select the Model", list(models.keys()))
 
-# Path to the root directory
-main_dir = "/home/chinu/Data/Projects/Python/AI-models/"
 
-# Run the selected model app
+# Dynamically set the main directory to the root of the project
+main_dir = os.path.dirname(os.path.abspath(__file__))
+
 def run_model_app(model_directory):
-    os.chdir(model_directory)
-    subprocess.run(["streamlit", "run", "app.py"])
+    # Reset to the main directory
+    os.chdir(main_dir)
 
+    # Construct the full path to the model directory
+    full_path = os.path.join(main_dir, model_directory)
+    
+    # Check if the directory exists before changing to it
+    if os.path.exists(full_path):
+        os.chdir(full_path)
+        subprocess.run(["streamlit", "run", "app.py"])
+        
+        # Change back to the main directory after running the app
+    os.chdir(main_dir)
+  
+
+
+
+   
 # Create 5 columns
 col1, col2, col3, col4, col5 = st.columns(5)
 
@@ -36,35 +51,29 @@ with col3:
     
     if st.button("Go to model"):
 
-        if selected_model == "Abalone":
-            os.chdir(main_dir)
-            print(os.getcwd())
-            model_dir = os.path.join(main_dir,"abalone")
+        if selected_model == "Abalone": 
+            model_dir = os.path.join(main_dir,"abalone") 
             run_model_app(model_dir)
 
         elif selected_model == "Amazon Product":
-            os.chdir(main_dir)
-            model_dir = os.path.join(main_dir,"amazone_product")
+            model_dir = os.path.join(main_dir , "amazone_product")
             run_model_app(model_dir)
 
         elif selected_model == "Job Placement":
-            os.chdir(main_dir)
             model_dir = os.path.join(main_dir,"job_placement_data")
             run_model_app(model_dir)
 
         elif selected_model == "Keyword Extraction":
-            os.chdir(main_dir)
             model_dir = os.path.join(main_dir,"keyword_extraction")
             run_model_app(model_dir)
 
         elif selected_model == "Music Recommendation":
-            os.chdir(main_dir)
             model_dir = os.path.join(main_dir,"music_recommendation")
             run_model_app(model_dir)
 
         elif selected_model == "Resume Screening":
-            os.chdir(main_dir)
             model_dir = os.path.join(main_dir,"resume_screening")
             run_model_app(model_dir)
+
 
 
