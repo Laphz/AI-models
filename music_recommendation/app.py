@@ -18,6 +18,7 @@ def recommendation(song_df):
     return songs
 
 # Streamlit app
+ st.set_page_config(page_title = 'Song Recommendation System')
 st.title('Song Recommendation System')
 img = Image.open('img.jpeg')
 img = img.resize((600,400))
