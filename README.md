@@ -1,6 +1,4 @@
 # Models .ipynb links
-- Strealit App link
-      https://laphz-ai-models.streamlit.app/
 - Keyword Extraction & Searching Model
     https://colab.research.google.com/drive/1cS1f6-3fogzMwKhnVLnX3qtp4q1X0kNw
 - Music Recommendation Model
